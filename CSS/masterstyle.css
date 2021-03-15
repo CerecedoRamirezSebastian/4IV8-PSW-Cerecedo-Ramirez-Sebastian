@@ -1,30 +1,38 @@
 *{
     padding:0;
     margin:0;
-    color:red;
+    color:yellow;
     text-align: center;
 }
 
 html, body{
-    background-image: url("https://i.pinimg.com/originals/47/ff/8a/47ff8a1089135691af62f08c7859dbc7.png");
-}
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png");
+    font-size: 70px;
+    font-family: 'Star Jedi', arial;
 
 .main-container{
-    margin: 2rem;
+    margin: 1rem;
 }
 
 nav, section, footer, article, aside{
     margin: 1rem;
     padding: 1rem;
+    align-items: center;
+    align-content: center;
+    font-size: 30px;
+    font-style: italic;
 }
 
-article, aside{
+article, aside, {
     width: 40%;
     display: inline-block;
     height: 300px;
     background-color: rgb(70, 70, 70);
 }
 
-nav, section, footer{
-    background-color: rgba(166, 174, 184, 0.712);
+.tabla{
+    margin: 1rem;
+    size: 20px;
+    border: solid yellow;
+    border-radius: 25%;
 }
