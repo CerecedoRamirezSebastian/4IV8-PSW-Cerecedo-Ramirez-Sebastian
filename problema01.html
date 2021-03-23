@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problema 01 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema01.js"></script>
 </head>
 <body>
     <p>
@@ -13,14 +15,14 @@
         diseñar un formulario haga dicho cálculo.
     </p>
     <form action="POST" name="formulario" action="">
-        <table>
+        <table align="center" border="1">
             <tr>
                 <td class="td_sup">Introduce la cantidad a invertir: $</td>
-                <td class="td_inf"><input type="text" name="cantidad" onkeypress=""></td>
+                <td class="td_inf"><input type="text" name="cantidad" onkeypress="return validarn(event)"></td>
             </tr>
             <tr>
                 <td></td>
-                <td class="td_inf"><input type="button" value="interes" name="enviar" onclick=""></td>
+                <td class="td_inf"><input type="button" value="Interes" name="enviar" onclick="interes()"></td>
             </tr>
             <tr>
                 <td class="td_sup">Su saldo total con interés al 2% es:</td>
@@ -28,7 +30,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="button" value="Borar" name="borrar" onclick=""></td>
+                <td><input type="button" value="Borar" name="borrar" onclick="return borrar1()"></td>
             </tr>
         </table>
     </form>
