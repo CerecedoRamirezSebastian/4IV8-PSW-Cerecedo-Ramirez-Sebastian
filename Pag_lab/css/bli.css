@@ -1,0 +1,71 @@
+/* Tiny Tweaks */
+
+.columna1 {
+    padding: 10px;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .columna1 {
+        padding: 20px;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 800px) {
+    .columna1 {
+        padding: 40px;
+        font-size: 2em;
+    }
+}
+.img{
+    display: block;
+    margin: auto;
+    border-top: solid white 20px;
+    border-bottom: solid white 20px;
+    border-left: solid white 20px;
+    border-right: solid white 20px;
+    width: 600px;
+    height: 400px;
+}
+
+.fondo{
+    background-color: black;
+}
+.tit{
+    font-family: 'Syne Mono', monospace;
+    font-size: 80px;
+    text-align: center;
+    color: rgb(40, 163, 10);
+}
+.p1{
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: red;
+}
+.p2{
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: white;
+}
+.p3{
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: yellow;
+}
+.vid{
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+}
+.youtube{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.a{
+    text-align: center;
+    font-family: 'Pangolin', cursive;
+    color: yellow;
+}
