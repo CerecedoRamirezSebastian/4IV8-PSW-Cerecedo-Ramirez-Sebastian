@@ -1,11 +1,13 @@
+body{
+    background-color: black;
+}
 .font{
-    position: absolute;
+    align-content: center;
     padding-top: 85px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: black;
 }
 .style_prevu_kit{
     display: inline-block;
@@ -34,14 +36,30 @@
     transition: all 200ms ease-in;
     transform: scale(1.5);
 }
-footer{
-    background-color: rgb(170, 167, 167);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-}
 .l{
+    align-content: center;
     border-top: red 5px;
     border-left: red 5px;
     border-right: red 5px;
     border-bottom: red 5px;
+}
+.redes{
+    display: block;
+    margin: auto;
+    align-content: center;
+    text-align: center;
+    font-family: 'Syne Mono', monospace;
+    color: red;
+}
+.titulo{
+    text-align: center;
+    font-family: 'Syne Mono', monospace;
+    color: red;
+    font-size: 50px;
+}
+.titp{
+    text-align: center;
+    font-family: 'Syne Mono', monospace;
+    color: red;
+    font-size: 30px;
 }

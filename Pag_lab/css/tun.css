@@ -1,5 +1,7 @@
-/* Tiny Tweaks */
-
+html{
+    margin-left: auto;
+    margin-right: auto;
+}
 .columna1 {
     padding: 10px;
     width: 100%;
@@ -26,7 +28,7 @@
     border-left: solid white 20px;
     border-right: solid white 20px;
     width: 600px;
-    height: 400px;
+    height: 320px;
 }
 
 .fondo{
@@ -42,6 +44,8 @@
     text-align: center;
     font-family: 'Pangolin', cursive;
     color: white;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 .p2{
     text-align: center;
