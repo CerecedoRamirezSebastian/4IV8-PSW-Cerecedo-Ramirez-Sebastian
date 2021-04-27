@@ -1,0 +1,4 @@
+Contraseña de MYSQL
+04022004
+contraseña DBAdmin
+Sebcer4
