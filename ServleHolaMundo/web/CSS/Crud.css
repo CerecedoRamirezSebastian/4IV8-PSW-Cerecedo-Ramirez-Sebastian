@@ -1,0 +1,59 @@
+
+
+.body{
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png")
+}
+
+
+.titulo{
+
+    text-align: center;
+    color: yellow
+}
+
+hr{
+
+width: 85%;
+
+}
+
+.nombre{
+
+    text-align: center;
+    color: yellow
+}
+
+.re{
+    color: yellow
+}
+
+.trr{
+    color: yellow
+}
+.containerActualizar{
+text-align: center;
+color: yellow
+
+}
+
+.containerConsulta{
+
+text-align: center;
+color: yellow
+}
+
+.containerEliminar{
+
+    text-align: center;
+    color: yellow
+}
+
+.containerRegistro{
+
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    color: yellow
+    
+
+}

@@ -9,33 +9,57 @@ and open the template in the editor.
         <title>Registro de Usuarios</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/Crud.css">
+        <script src="JS/Validar.js" ></script>
+
     </head>
-    <body>
+    <body class="body">
+        
         <div class="container" >
+
+            <h1 class="titulo">REGISTRO</h1>
+            <hr>
+        <br>
             
             <div class="containerRegistro">
                 
                 <form name="formulario" method="post" 
                   action="Registro">
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" >
-                    <br>
-                    <label>Apellido Paterno:</label>
-                    <input type="text" name="appat" >
-                    <br>
-                    <label>Apellido Materno:</label>
-                    <input type="text" name="appmat" >
-                    <br>
-                    <label>Edad:</label>
-                    <input type="number" name="edad" min="01" max="99" size="2" >
-                    <br>
-                    <label>Correo:</label>
-                    <input type="email" name="correo" >
-                    <br>
-                    <input type="submit" value="Registro de Usuarios" >
-                    <input type="reset" value="Borrar Registro" >
-                </form>
+                    <label class="re">Registrar Usuario</label>
+
+                  <table align="center" border="5">
+                    <thead>
+                        <tr class="trr">
+                        
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                        
+                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        
+                                        <td><input type="text" name="nombre" onkeypress="return validarp(event)" ></td>
+                                        <td><input type="text" name="appat" onkeypress="return validarp(event)" ></td>
+                                        <td><input type="text" name="appmat" onkeypress="return validarp(event)" ></td>
+                                        <td><input type="number" name="edad" min="01" max="99" size="2" onkeypress="return validarn(event)" ></td>
+                                        <td><input type="email" name="correo" onkeypress="return validarc(event)" ></td>
+                                        
+                                        </tr>
+                                        
+                                                    </tbody>
+   
+            </table>
+                <br>
+                <input type="submit" value="Registro de Usuarios" >
+                <input type="reset" value="Borrar Registro" >
+            </form>
             </div>
+            <br>
+            <hr>
             <br>
             <div class="containerConsulta" >
                 <br>
@@ -44,25 +68,91 @@ and open the template in the editor.
                 </form>
             </div>
             <br>
+            <br>
+            <hr>
+            <br>
             <div class="containerEliminar" >
                 <br>
                 <form method="post" name="formularioeliminar" action="Eliminar">
                     <label>ID del Usuario a Eliminar</label>
-                    <input type="number" name="ideliminar" >
+                    <input type="number" name="ideliminar" onkeypress="return validarn(event)" >
+                    <br>
                     <br>
                     <input type="submit" value="Eliminar Usuario" >
                 </form>
                 
             </div>
-            
+
+            <br>
+            <br>
+            <hr>
+            <br>
             <br>
             
             <div class="containerActualizar">
-                <h1>tarea wiiii deberan de agregar la css y js correspondiente a los formularios</h1>
-                <br>
-                <h1>deberan de agregar la funcionalidad de poder realizar una actualizacion a los datos:
-                nombre, appat, apmat, edad, correo</h1>
-            </div>     
+        
+                
+                <form method="post" name="formularioactualizar" action="Actualizar" >
+                    <label>Actualización de Datos</label>
+                    <br>
+
+                    <table align="center" border="5" class="tabla-Producto">
+                        <thead>
+            <tr>
+            
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Edad</th>
+            <th>Correo</th>
+            
+            </tr>
+                        </thead>
+            
+                        <tbody>
+            <tr>
+            
+                <td><input type="text" name="nom_n"
+                     onkeypress="return validarp(event)" 
+                    class="input_Producto" ></td>
+            <td><input type="text" name="appat_n"
+                  onkeypress="return validarp(event)"
+                class="input_Producto" ></td>
+            <td><input type="text" name="apmat_n"
+                  onkeypress="return validarp(event)"
+                class="input_Producto" ></td>
+            <td><input type="text" name="edad_n"
+                 onkeypress="return validarn(event)"
+                class="input_Producto" ></td>
+            <td><input type="text" name="correo_n"
+                 onkeypress="return validarc(event)" 
+                class="input_Producto" ></td>
+            
+            </tr>
+            
+                        </tbody>
+
+            
+                    </table>
+                    <br>
+                    <br>
+                    
+                    <h3> Ingresa el id a buscar: </h3>
+                    <input type="text" name="Id_actua" onkeypress="return validarn(event)"  >
+                    <br>
+                    <br>
+
+                    <input type="submit" value="Actualizacion de Usuarios" >
+                <input type="reset" value="Borrar Registro" >
+
+                </form>
+                
+            </div>
+            
+            <br>
+            <br>
+            
         </div>
+       
     </body>
 </html>

@@ -4,31 +4,36 @@
  * and open the template in the editor.
  */
 
+// Pagina :https://www.anerbarrena.com/mysql-update-5183/
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-/*
-Connection nos ayuda a realizar la conexion con las bd, con el servidor
-*/
-import java.sql.Connection;
-import java.sql.DriverManager;
-/*
-Statement nos ayuda a poder definir y manipular los datos de las bd
-creacion de la bd, insertar tablas, eleminar tablas,  create, drop, alter
-    manipulacion de los datos, insert, update, delete
-*/
-import java.sql.Statement;
-/*
-nos ayuda para las querrys, o las consultas a la bd
-*/
-import java.sql.ResultSet;
-import javax.servlet.ServletConfig;
 
+/**
+ *
+ * @author Rafael
+ */
+public class Actualizar extends HttpServlet {
 
-public class Registro extends HttpServlet {
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    
     //variables globales
     
     private Connection con;
@@ -41,7 +46,7 @@ public class Registro extends HttpServlet {
     public void init(ServletConfig cfg) throws ServletException{
         
         //lo primero que necesitamos es trazar la ruta al servidor DB
-        String URL = "jdbs:mysql:3306//localhost/registro4iv8";
+        String URL = "jdbc:mysql:3307//localhost/registro4iv8";
         //driver:gestor:puerto//IP/nombreBD
         
         String userName = "root";
@@ -69,53 +74,32 @@ public class Registro extends HttpServlet {
         
         }
     }
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request que sirve para peticiones del cliente
-     * @param response servlet response que sirve para dar respuestas por parte del servidor
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, 
-            HttpServletResponse response)
+    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
             String nom, appat, apmat, correo, ip, iph;
-            int edad, puerto, puertoh;
+            int edad, id_a;
             
-            nom = request.getParameter("nombre");
-            appat = request.getParameter("appat");
-            apmat = request.getParameter("appmat");
-            correo = request.getParameter("correo");
+            nom = request.getParameter("nom_n");   
+            appat = request.getParameter("appat_n");
+            apmat = request.getParameter("appmat_n");
+            correo = request.getParameter("correo_n");
+            
+            
+            id_a = Integer.parseInt(request.getParameter("Id_actua"));
                         
-            edad = Integer.parseInt(request.getParameter("edad"));
-            
-            ip = request.getLocalAddr();
-            puerto = request.getLocalPort();
-            
-            iph = request.getRemoteAddr();
-            puertoh = request.getRemotePort();
-            
-            
-            /*
-            Una vez que tengamos los datos vamos a insertarlos en la bd
-            
-            insert into nombre_tabla (definicion_atributo, definicion_atributo, ...)
-            values ("valores_cadena", valores_numericos, ....);
-            
-            */
+            edad = Integer.parseInt(request.getParameter("edad_n"));
             
             try{
                 
-                String q = "insert into Mregistro "
-                        + "(nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
-                        + "values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')";
+                String q = "UPDATE Mregistr"
+                        + "SET  (nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
+                        + "values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')"
+                        + "WHERE id_usu values "+id_a+" ";
                 
                 //ejecutar la sentencia
                 set.executeUpdate(q);
@@ -139,20 +123,13 @@ public class Registro extends HttpServlet {
                     + "Tu edad es: " +edad
                     + "<br>"
                     + "Tu correo electronico es:  "+correo);
-            out.println("<br>"
-                    + "IP local :" + ip
-                    + "<br>"
-                    + "Puerto Local :" + puerto
-                    + "<br>"
-                    + "IP Remota :" +iph
-                    + "<br>"
-                    + "Puerto Romoto :" +puertoh);
             out.println("<h1>Registro Exitoso</h1>"
                     + "<a href='index.html'>Regresar a la pagina principal</a>"
                     + "<br>"
                     + "<a href='Consultar'>Consultar Tabla General de Usuarios</a>");
             out.println("</body>");
             out.println("</html>");
+            
             
             }catch(Exception e){
                 
@@ -162,16 +139,30 @@ public class Registro extends HttpServlet {
                 out.println("<title>Servlet Registro</title>");            
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Registro No Exitoso, vuelva a intentarlo</h1>"
+                out.println("<h1>Actualizacion No Exitosa, vuelva a intentarlo</h1>"
                     + "<a href='index.html'>Regresar a la pagina principal</a>");
                 out.println("</body>");
                 out.println("</html>");
                 
-                System.out.println("No se registro en la tabla");
+                System.out.println("No se Actualizo en la tabla");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
             
+            
             }
+            
+            
+            
+            
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Actualizar</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Actualizar at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -209,20 +200,6 @@ public class Registro extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-    //hace falta un destructor el destructor libera las conexiones y la memoria de las variables
-    public void destroy(){
-        try{
-            con.close();
-        
-        }catch(Exception e){
-            super.destroy();
-        
-        }
-    }
-    
-    
-    
     @Override
     public String getServletInfo() {
         return "Short description";
