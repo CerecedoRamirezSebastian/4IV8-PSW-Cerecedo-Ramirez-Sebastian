@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rafael
+ * @author CerecedoRamirezSebastian
  */
 public class Actualizar extends HttpServlet {
 
@@ -86,7 +86,7 @@ public class Actualizar extends HttpServlet {
             
             nom = request.getParameter("nom_n");   
             appat = request.getParameter("appat_n");
-            apmat = request.getParameter("appmat_n");
+            apmat = request.getParameter("apmat_n");
             correo = request.getParameter("correo_n");
             
             
@@ -96,12 +96,9 @@ public class Actualizar extends HttpServlet {
             
             try{
                 
-                String q = "UPDATE Mregistr"
-                        + "SET  (nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
-                        + "values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')"
-                        + "WHERE id_usu values "+id_a+" ";
-                
-                //ejecutar la sentencia
+                String q = "UPDATE Mregistro SET nom_usu='"+nom+"', appat_usu='"+appat+"', apmat_usu='"+apmat+"', edad_usu="+edad+", correo_usu='"+correo+"' WHERE id_usu = "+id_a+"; ";
+                        
+               
                 set.executeUpdate(q);
                 
                 System.out.println("Registro exitoso");

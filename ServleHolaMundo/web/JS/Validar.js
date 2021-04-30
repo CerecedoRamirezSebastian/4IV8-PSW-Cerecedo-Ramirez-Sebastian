@@ -1,4 +1,3 @@
-//Validar solo numeros
 function validarn(e){
     var teclado = (document.all)?e.keyCode:e.which;
     if(teclado == 8)return true;
@@ -8,9 +7,6 @@ function validarn(e){
     var prueba = String.fromCharCode(teclado);
     return patron.test(prueba);
 }
-
-//Validar solo palabras y espcacions
-
 function validarp(e){
     var teclado = (document.all)?e.keyCode:e.which;
     if(teclado == 8)return true;
@@ -20,11 +16,10 @@ function validarp(e){
     var prueba = String.fromCharCode(teclado);
     return patron.test(prueba);
 }
-
-function validarc(e){
-    var teclado = (document.all)?e.keyCode:e.which;
-    if(teclado == 8)return true;
-    var patron = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/; 
-    var prueba = String.fromCharCode(teclado);
-    return patron.test(prueba);
-} 
+//function validarc(e) {
+  //if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(e)){
+   //alert("La dirección de email " + e + " es correcta.");
+  //} else {
+   //alert("La dirección de email es incorrecta.");
+  //}
+//}

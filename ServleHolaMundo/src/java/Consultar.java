@@ -30,7 +30,7 @@ import javax.servlet.ServletConfig;
 
 /**
  *
- * @author demon
+ * @author CerecedoRamirezSebastian
  */
 public class Consultar extends HttpServlet {
 

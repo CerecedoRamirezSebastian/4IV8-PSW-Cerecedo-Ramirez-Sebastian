@@ -29,7 +29,7 @@ import javax.servlet.ServletConfig;
 
 /**
  *
- * @author demon
+ * @author CerecedoRamirezSebastian
  */
 public class Eliminar extends HttpServlet {
 
